@@ -1,0 +1,19 @@
+#grid-cont {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 224px;
+}
+
+.square {
+    display: flex;
+    border: 1px solid;
+    border-color: black;
+    height: 10px;
+    width: 10px;
+    margin: 1px;
+}
+
+.square.filled {
+    background: black;
+}
