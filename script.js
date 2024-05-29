@@ -1,16 +1,41 @@
 const container = document.querySelector('#grid-cont');
 
-for (let i = 0; i < 256; i++) {
+function boardSet(size) {
 
-    const square = document.createElement('div');
-    square.className = 'square';
-    container.appendChild(square);
+let squareCount = size*size;
+let squareDim = (1/size)*100;
+
+    for (let i = 0; i < squareCount; i++) {
+
+        const square = document.createElement('div');
+        square.className = 'square';
+        square.style.width = squareDim + '%';
+        square.style.height = squareDim + '%';
+        container.appendChild(square);
+    }
+    const sqr = document.querySelectorAll('div.square');
+    sqr.forEach((div) => {
+        div.addEventListener('mouseover', (e) => {
+            div.classList.add('filled');
+        });
+    });    
+
 }
 
-const sqr = document.querySelectorAll('div.square');
+boardSet(16);
 
-sqr.forEach((div) => {
-    div.addEventListener('mouseover', (e) => {
-        div.classList.add('filled');
-    });
-});
+function sizePrompt() {
+    var sizeInput = prompt("How many squares per side do you want? (max of 100)");
+    document.querySelector('#error').innerText = '';
+    if (sizeInput < 100 && sizeInput > 1) {
+        while (container.firstChild) {
+            container.removeChild(container.lastChild);
+}
+        boardSet(sizeInput);
+
+    } else {
+     console.log('Wrong Answer');
+     document.querySelector('#error').innerText = 'You typed ' + sizeInput + '. You seriously fucking typed ' + sizeInput + '. When I told you to choose a number between 2 and 100. You idiot. ' + sizeInput + '. I can\'t believe you\'ve done this. You absolute dummy.';
+    }
+    console.log('hey');
+}

@@ -2,18 +2,31 @@
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
-    width: 224px;
+    width: 400px;
+    height: 400px;
+    border: 1px solid;
 }
 
 .square {
     display: flex;
-    border: 1px solid;
     border-color: black;
-    height: 10px;
-    width: 10px;
-    margin: 1px;
 }
 
 .square.filled {
     background: black;
+}
+
+button {
+    display: block;
+    margin: 0 auto;
+}
+
+#error {
+    color: red;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 13px;
+    text-align: center;
+    width: 375px;
+    margin: 10px auto;
+    
 }
