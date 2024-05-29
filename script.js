@@ -16,7 +16,14 @@ let squareDim = (1/size)*100;
     const sqr = document.querySelectorAll('div.square');
     sqr.forEach((div) => {
         div.addEventListener('mouseover', (e) => {
+            let target = e.target;
+            let shade = Number(target.style.opacity);
+            if (shade <= 1) {
+                shade += 0.1;
+                target.style.opacity = shade;
+            }
             div.classList.add('filled');
+
         });
     });    
 
